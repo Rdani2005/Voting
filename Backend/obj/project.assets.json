@@ -230,11 +230,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Advance\\Proyecto-Dani\\Backend\\Backend.csproj",
+      "projectUniqueName": "C:\\Advance\\Proyecto-Dani\\Voting\\Backend\\Backend.csproj",
       "projectName": "Backend",
-      "projectPath": "C:\\Advance\\Proyecto-Dani\\Backend\\Backend.csproj",
+      "projectPath": "C:\\Advance\\Proyecto-Dani\\Voting\\Backend\\Backend.csproj",
       "packagesPath": "C:\\Users\\jptoc\\.nuget\\packages\\",
-      "outputPath": "C:\\Advance\\Proyecto-Dani\\Backend\\obj\\",
+      "outputPath": "C:\\Advance\\Proyecto-Dani\\Voting\\Backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Core.entities
 {
-    public class Partido
-    {
+    public class Partido {
+
+
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Core.entities
 {
-    public class Miembro
-    {
+    public class Miembro {
+
+
     }
 }

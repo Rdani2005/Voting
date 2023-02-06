@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Core.entities
 {
-    internal class Articulo
-    {
+    class Articulo {
+
+
     }
 }

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Oritas Software Dev\\Desktop\\Colegio\\Proyectos Progra\\Backend\\Backend\\Backend.csproj": {}
+    "C:\\Users\\jptoc\\Documents\\Repositorios\\Voting\\Backend\\Backend\\Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Oritas Software Dev\\Desktop\\Colegio\\Proyectos Progra\\Backend\\Backend\\Backend.csproj": {
+    "C:\\Users\\jptoc\\Documents\\Repositorios\\Voting\\Backend\\Backend\\Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Oritas Software Dev\\Desktop\\Colegio\\Proyectos Progra\\Backend\\Backend\\Backend.csproj",
+        "projectUniqueName": "C:\\Users\\jptoc\\Documents\\Repositorios\\Voting\\Backend\\Backend\\Backend.csproj",
         "projectName": "Backend",
-        "projectPath": "C:\\Users\\Oritas Software Dev\\Desktop\\Colegio\\Proyectos Progra\\Backend\\Backend\\Backend.csproj",
-        "packagesPath": "C:\\Users\\Oritas Software Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Oritas Software Dev\\Desktop\\Colegio\\Proyectos Progra\\Backend\\Backend\\obj\\",
+        "projectPath": "C:\\Users\\jptoc\\Documents\\Repositorios\\Voting\\Backend\\Backend\\Backend.csproj",
+        "packagesPath": "C:\\Users\\jptoc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jptoc\\Documents\\Repositorios\\Voting\\Backend\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Oritas Software Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jptoc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Oritas Software Dev\\Desktop\\Colegio\\Proyectos Progra\\Backend\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\Oritas Software Dev\\Desktop\\Colegio\\Proyectos Progra\\Backend\\Core\\Core.csproj"
+              "C:\\Users\\jptoc\\Documents\\Repositorios\\Voting\\Backend\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\jptoc\\Documents\\Repositorios\\Voting\\Backend\\Core\\Core.csproj"
               }
             }
           }
@@ -72,24 +72,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Oritas Software Dev\\Desktop\\Colegio\\Proyectos Progra\\Backend\\Core\\Core.csproj": {
+    "C:\\Users\\jptoc\\Documents\\Repositorios\\Voting\\Backend\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Oritas Software Dev\\Desktop\\Colegio\\Proyectos Progra\\Backend\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\jptoc\\Documents\\Repositorios\\Voting\\Backend\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\Oritas Software Dev\\Desktop\\Colegio\\Proyectos Progra\\Backend\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\Oritas Software Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Oritas Software Dev\\Desktop\\Colegio\\Proyectos Progra\\Backend\\Core\\obj\\",
+        "projectPath": "C:\\Users\\jptoc\\Documents\\Repositorios\\Voting\\Backend\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\jptoc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jptoc\\Documents\\Repositorios\\Voting\\Backend\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Oritas Software Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jptoc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -131,7 +131,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

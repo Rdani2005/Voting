@@ -1,4 +1,4 @@
-import "./globals.css";
+import "../globals.css";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ["latin"] });
 const now: Date = new Date();
 
 export const metadata = {
-    title: `Votaciones ${now.getFullYear()}`,
-    description: "Programa de Votaciones año 2023",
+    title: `Soporte de Elecciones ${now.getFullYear()}`,
+    description: `Programa de Votaciones año ${now.getFullYear()}`,
 };
 
 export default function RootLayout({

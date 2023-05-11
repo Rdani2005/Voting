@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: votingbackend-depl
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: votingbackend
+    template:
+        metadata:
+            labels:
+                app: votingbackend
+        spec:
+            containers:
+                - name: votingbackend
+                  image: rdani2005/votingbackend:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: votingbackend-clousterip-srv
+spec:
+    type: ClusterIP
+    selector:
+        app: votingbackend
+    ports:
+        - name: votingbackend
+          protocol: TCP
+          port: 80
+          targetPort: 80

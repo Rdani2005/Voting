@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Jmt3Rveg2gOmrrpMzsr6HA3iqxQfprRB0NNZXcfSvsc=",
+  "Source": "VotingBackend",
+  "BasePath": "_content/VotingBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

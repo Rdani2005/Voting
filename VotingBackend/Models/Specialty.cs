@@ -8,7 +8,7 @@ namespace VotingBackend.Models
         [Required]
         public int Id { get; set; }
         [Required]
-        public int Name { get; set; }
+        public String Name { get; set; }
 
         public ICollection<Voter>? Voters { get; set; }
     }

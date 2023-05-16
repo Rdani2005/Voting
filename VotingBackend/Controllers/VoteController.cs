@@ -30,7 +30,7 @@ namespace VotingBackend.Controllers
         public ActionResult HasUserVote(int voterId)
         {
             return _repo.UserHasVote(voterId)
-                ? Forbid("El estudiante ya ha emitido su voto")
+                ? BadRequest("El estudiante ya ha emitido su voto")
                 : Ok("El estudiante puede emitir su voto");
         }
 
@@ -47,16 +47,14 @@ namespace VotingBackend.Controllers
             var vote = new Vote()
             {
                 PoliticalId = addVote.PartyId,
-                PoliticalParty = PoliticalParty,
-                Voter = Voter,
                 VoterId = voterId
             };
 
             _repo.UseVote(vote);
 
-            Voter.Vote = vote;
-            PoliticalParty.Votes.Add(vote);
             return Ok("Estudiante ha votado con exito!");
         }
+
+
     }
 }

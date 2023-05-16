@@ -55,6 +55,16 @@ namespace VotingBackend.Data
                 .WithMany(y => y.Voters)
                 .HasForeignKey(v => v.YearId);
 
+            modelBuilder.Entity<Year>()
+                .HasMany(y => y.Voters)
+                .WithOne(v => v.year)
+                .HasForeignKey(v => v.YearId);
+
+            modelBuilder.Entity<Specialty>()
+                .HasMany(s => s.Voters)
+                .WithOne(v => v.Specialty)
+                .HasForeignKey(v => v.SpecialtyId);
+
         }
 
 

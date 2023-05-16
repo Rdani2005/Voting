@@ -7,5 +7,7 @@ namespace VotingBackend.Repos.PoliticalPartyRepo
         void CreatePoliticalParty(PoliticalParty politicalParty);
         IEnumerable<PoliticalParty> GetPoliticalParties();
         PoliticalParty GetPoliticalPartyById(int id);
+
+        int GetPoliticalPartyVotesCount(int id);
     }
 }

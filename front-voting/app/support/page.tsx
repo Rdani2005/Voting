@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import Image from "next/image";
+
 const page = () => {
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
@@ -47,3 +48,5 @@ const page = () => {
 };
 
 export default page;
+
+// Todo estos archivos es solo front

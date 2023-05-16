@@ -1,3 +1,4 @@
+import { GlobalContextProvider } from "../context/Store";
 import "../globals.css";
 import { Inter } from "next/font/google";
 
@@ -17,7 +18,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="es">
-            <body className={inter.className}>{children}</body>
+            <body className={inter.className}>
+                <GlobalContextProvider>{children}</GlobalContextProvider>
+            </body>
         </html>
     );
 }

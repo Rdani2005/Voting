@@ -1,5 +1,6 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using VotingBackend.Dtos.Specialty;
 using VotingBackend.Dtos.Voter;
 using VotingBackend.Models;
 using VotingBackend.Repos.SpecialtyRepo;
@@ -33,20 +34,34 @@ namespace VotingBackend.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<ReadVoter>> GetAll()
         {
-            return Ok(
-                _mapper.Map<IEnumerable<ReadVoter>>(
-                    _repo.GetAllVoters()
-                )
-            );
+            var voters = _repo.GetAllVoters();
+            var response = new List<ReadVoter>();
+            foreach (var voter in voters)
+            {
+                var voterRead = _mapper.Map<ReadVoter>(voter);
+                voterRead.Specialty = _mapper.Map<ReadSpecialtyDto>(_repo.GetVoterSpecialty(voter.SpecialtyId));
+                voterRead.year = _mapper.Map<YearReadDto>(_repo.GetVoterYear(voter.YearId));
+
+                response.Add(voterRead);
+            }
+
+
+            return Ok(_mapper.Map<IEnumerable<ReadVoter>>(
+                    response
+                ));
         }
 
         [HttpGet("{voterId}", Name = "GetSingleVoterById")]
         public ActionResult<ReadVoter> GetSingleVoterById(int voterId)
         {
             var voter = _repo.GetVoterById(voterId);
-            return (voter == null)
-                ? NotFound("Votante no fue encontrado")
-                : Ok(_mapper.Map<ReadVoter>(voter));
+            if (voter == null) return NotFound();
+
+            var voterRead = _mapper.Map<ReadVoter>(voter);
+            voterRead.Specialty = _mapper.Map<ReadSpecialtyDto>(_repo.GetVoterSpecialty(voter.SpecialtyId));
+            voterRead.year = _mapper.Map<YearReadDto>(_repo.GetVoterYear(voter.YearId));
+
+            return Ok(_mapper.Map<ReadVoter>(voter));
 
         }
 
@@ -54,25 +69,59 @@ namespace VotingBackend.Controllers
         public ActionResult<ReadVoter> GetVoterByIdentification(String voterIdentification)
         {
             var voter = _repo.GetVoterByIdentification(voterIdentification);
-            return (voter == null)
-                ? NotFound("Votante no fue encontrado")
-                : Ok(_mapper.Map<ReadVoter>(voter));
+            if (voter == null) return NotFound();
+
+            var voterRead = _mapper.Map<ReadVoter>(voter);
+            voterRead.Specialty = _mapper.Map<ReadSpecialtyDto>(_repo.GetVoterSpecialty(voter.SpecialtyId));
+            voterRead.year = _mapper.Map<YearReadDto>(_repo.GetVoterYear(voter.YearId));
+
+            return Ok(_mapper.Map<ReadVoter>(voter));
         }
 
         [HttpPost]
         public ActionResult<ReadVoter> AddVoter(AddVoter voterDto)
         {
             var newVoter = _mapper.Map<Voter>(voterDto);
-            newVoter.Specialty = _specialRepo.GetSpecialty(voterDto.SpecialtyId);
-            newVoter.year = _yearRepo.GetYear(voterDto.YearId);
-            _repo.CreateVoter(newVoter);
-            ReadVoter voter = _mapper.Map<ReadVoter>(newVoter);
 
-            return CreatedAtRoute(
-                nameof(GetSingleVoterById),
-                new { Id = voter.Id },
-                voter
-            );
+            var specialty = _specialRepo.GetSpecialty(voterDto.SpecialtyId);
+            if (specialty == null)
+            {
+                return NotFound($"Specialty with ID {voterDto.SpecialtyId} not found.");
+            }
+
+            Console.WriteLine($"--> Especialidad del votante: {specialty.Name}");
+
+            var year = _yearRepo.GetYear(voterDto.YearId);
+            if (year == null)
+            {
+                return NotFound($"Year with ID {voterDto.YearId} not found.");
+            }
+
+            Console.WriteLine($"--> Año del votante: {year.Name}");
+
+            newVoter.SpecialtyId = specialty.Id;
+            newVoter.YearId = year.Id;
+
+            newVoter.Specialty = specialty;
+            newVoter.year = year;
+
+
+            _repo.CreateVoter(newVoter);
+
+            specialty.Voters.Add(newVoter);
+            year.Voters.Add(newVoter);
+
+            ReadVoter voter = _mapper.Map<ReadVoter>(newVoter);
+            voter.Specialty = _mapper.Map<ReadSpecialtyDto>(specialty);
+            voter.year = _mapper.Map<YearReadDto>(year);
+
+            // return CreatedAtRoute(
+            //     nameof(GetSingleVoterById),
+            //     new { voterIdentification = voter.Id },
+            //     voter
+            // );
+
+            return Ok(voter);
         }
     }
 }

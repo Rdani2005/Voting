@@ -24,5 +24,9 @@ namespace VotingBackend.Repos.PoliticalPartyRepo
         public PoliticalParty GetPoliticalPartyById(int id) =>
             _context.PoliticalParties.FirstOrDefault(p => p.Id == id);
 
+        public int GetPoliticalPartyVotesCount(int id)
+        {
+            return _context.Votes.Where(v => v.PoliticalId == id).Count();
+        }
     }
 }

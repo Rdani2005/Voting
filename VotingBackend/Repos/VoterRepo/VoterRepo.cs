@@ -44,5 +44,15 @@ namespace VotingBackend.Repos.VoterRepo
 
         public IEnumerable<Voter> GetVotersByYear(int yearId) =>
             _context.Voters.Where(v => v.YearId == yearId);
+
+        public Specialty GetVoterSpecialty(int specialtyId)
+        {
+            return _context.Specialties.FirstOrDefault(s => s.Id == specialtyId);
+        }
+
+        public Year GetVoterYear(int yearId)
+        {
+            return _context.Years.FirstOrDefault(y => y.Id == yearId);
+        }
     }
 }

@@ -8,6 +8,6 @@ namespace VotingBackend.Dtos.Parties
         public String? Name { get; set; }
         public String? PetUrl { get; set; }
         public String? ImageUrl { get; set; }
-        public ICollection<ReadMemberDto>? Members { get; set; }
+
     }
 }

@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { VoterGlobalContextProvider } from "./context/VoterStore";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,11 @@ export default function RootLayout({
 }) {
     return (
         <html lang="es">
-            <body className={inter.className}>{children}</body>
+            <body className={inter.className}>
+                <VoterGlobalContextProvider>
+                    {children}
+                </VoterGlobalContextProvider>
+            </body>
         </html>
     );
 }

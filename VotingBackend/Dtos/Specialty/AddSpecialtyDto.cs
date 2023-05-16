@@ -5,6 +5,6 @@ namespace VotingBackend.Dtos.Specialty
     public class AddSpecialtyDto
     {
         [Required]
-        public int Name { get; set; }
+        public String Name { get; set; }
     }
 }
